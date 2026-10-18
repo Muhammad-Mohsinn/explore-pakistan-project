@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400" role="img">
+  <defs><linearGradient id="s" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#3a2e5f"/><stop offset="0.6" stop-color="#e76f51"/><stop offset="1" stop-color="#ffd29d"/></linearGradient></defs>
+  <rect width="600" height="400" fill="url(#s)"/>
+  <circle cx="480" cy="110" r="38" fill="#fff0c9" opacity="0.9"/>
+  <g fill="#2b2d42">
+    <rect x="90" y="190" width="420" height="150"/>
+    <path d="M230 190 Q300 90 370 190Z"/>
+    <path d="M110 190 Q150 130 190 190Z"/>
+    <path d="M410 190 Q450 130 490 190Z"/>
+    <rect x="296" y="85" width="8" height="25"/>
+    <rect x="40" y="110" width="22" height="230"/><polygon points="40,110 51,80 62,110"/>
+    <rect x="538" y="110" width="22" height="230"/><polygon points="538,110 549,80 560,110"/>
+  </g>
+  <g fill="#e8a33d"><circle cx="300" cy="82" r="6"/><circle cx="150" cy="128" r="4"/><circle cx="450" cy="128" r="4"/><circle cx="51" cy="76" r="4"/><circle cx="549" cy="76" r="4"/></g>
+  <g fill="#ffd29d"><path d="M270 340 V270 Q300 235 330 270 V340Z"/><path d="M130 340 V280 Q150 258 170 280 V340Z"/><path d="M430 340 V280 Q450 258 470 280 V340Z"/></g>
+  <rect y="340" width="600" height="60" fill="#1a1a2e"/>
+</svg>

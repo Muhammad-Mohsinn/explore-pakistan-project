@@ -1,0 +1,173 @@
+/* ===== home.css : Element, class and ID selectors, text/font, borders, background colour ===== */
+
+/* ---- Element selectors ---- */
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  font-size: 16px;
+  line-height: 1.7;
+  color: #2b2d42;
+  background-color: #fdf6e9;
+}
+
+h1, h2, h3 {
+  font-family: 'Playfair Display', serif;
+  color: #0f4c5c;
+  line-height: 1.2;
+}
+
+h1 { font-size: 3.2rem; font-weight: 900; margin: 10px 0 18px; }
+h2 { font-size: 2.2rem; text-align: center; margin-bottom: 30px; }
+h3 { font-size: 1.4rem; margin-bottom: 6px; }
+
+a { color: #c8553d; text-decoration: none; font-weight: 600; }
+a:hover { text-decoration: underline; }
+
+em { color: #e8a33d; font-style: italic; }
+strong { color: #0f4c5c; }
+
+/* ---- ID selector ---- */
+#site-header {
+  background-color: #0f4c5c;
+  padding: 16px 6%;
+  border-bottom: 4px solid #e8a33d;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
+}
+
+#intro-note {
+  font-size: 1.15rem;
+  font-style: italic;
+  text-align: center;
+  max-width: 750px;
+  margin: 0 auto 30px;
+  padding: 14px 20px;
+  border-left: 5px solid #e8a33d;
+  border-right: 5px solid #e8a33d;
+  background-color: rgba(232, 163, 61, 0.12);
+}
+
+/* ---- Navigation (class selectors) ---- */
+.logo {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.7rem;
+  font-weight: 900;
+  color: #ffffff;
+  letter-spacing: 1px;
+}
+.logo span { color: #e8a33d; }
+.logo:hover { text-decoration: none; }
+
+.nav-list { list-style: none; margin: 0; padding: 0; display: flex; gap: 6px; }
+.nav-list a {
+  display: block;
+  color: #ffffff;
+  padding: 8px 18px;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  font-size: 0.85rem;
+  border-bottom: 3px solid transparent;
+  transition: border-color 0.3s, color 0.3s;
+}
+.nav-list a:hover,
+.nav-list a.active { color: #e8a33d; border-bottom-color: #e8a33d; text-decoration: none; }
+
+/* ---- Hero ---- */
+.hero {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  padding: 70px 6%;
+  background: linear-gradient(135deg, #fdf6e9 0%, #f6dcae 100%);
+}
+.hero-text { flex: 1; }
+.hero-img {
+  flex: 1;
+  width: 50%;
+  max-width: 100%;
+  border: 6px solid #ffffff;
+  border-radius: 24px;
+  box-shadow: 0 18px 40px rgba(15, 76, 92, 0.35);
+}
+
+.tagline {
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #c8553d;
+  margin: 0;
+}
+
+.btn {
+  display: inline-block;
+  margin: 18px 10px 0 0;
+  padding: 13px 30px;
+  color: #ffffff;
+  background-color: #c8553d;
+  border: 2px solid #c8553d;
+  border-radius: 50px;
+  box-shadow: 0 6px 16px rgba(200, 85, 61, 0.4);
+  transition: background-color 0.3s, transform 0.3s;
+}
+.btn:hover { background-color: #a93f2a; transform: translateY(-3px); text-decoration: none; }
+.btn-outline { background-color: transparent; color: #0f4c5c; border-color: #0f4c5c; box-shadow: none; }
+.btn-outline:hover { background-color: #0f4c5c; color: #ffffff; }
+
+/* ---- Why section: inline-block cards ---- */
+.why { padding: 70px 6%; background-color: #ffffff; }
+.features { font-size: 0; text-align: center; }  /* removes gaps between inline-blocks */
+.feature {
+  display: inline-block;
+  vertical-align: top;
+  width: 31%;
+  margin: 1%;
+  padding: 28px 24px;
+  font-size: 1rem;
+  text-align: left;
+  background-color: #fdf6e9;
+  border: 2px solid #f0d9b0;
+  border-top: 6px solid #0f4c5c;
+  border-radius: 14px;
+  transition: box-shadow 0.3s;
+}
+.feature:hover { box-shadow: 0 12px 28px rgba(0, 0, 0, 0.15); }
+
+.hl {
+  background-color: #e8a33d;
+  color: #ffffff;
+  padding: 1px 8px;
+  border-radius: 6px;
+  font-weight: 600;
+}
+
+/* ---- Destinations ---- */
+.places { padding: 70px 6%; max-width: 950px; margin: 0 auto; }
+.places h3 { border-bottom: 2px dashed #e8a33d; padding-bottom: 4px; display: inline-block; }
+
+/* ---- Footer ---- */
+footer {
+  background-color: #0f4c5c;
+  color: #cfe3e8;
+  text-align: center;
+  padding: 26px 6%;
+  border-top: 4px solid #e8a33d;
+  font-size: 0.9rem;
+}
+footer a { color: #e8a33d; }
+
+/* ---- Small screens ---- */
+@media (max-width: 800px) {
+  .hero { flex-direction: column; padding: 40px 6%; }
+  .hero-img { width: 100%; }
+  h1 { font-size: 2.3rem; }
+  .feature { width: 100%; margin: 10px 0; }
+  #site-header { flex-direction: column; gap: 10px; }
+}

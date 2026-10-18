@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" role="img">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#1b4965"/><stop offset="0.55" stop-color="#f4a261"/><stop offset="1" stop-color="#ffe3b3"/>
+    </linearGradient>
+    <linearGradient id="lake" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#2a9d8f"/><stop offset="1" stop-color="#0f4c5c"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="600" fill="url(#sky)"/>
+  <circle cx="560" cy="250" r="70" fill="#fff3d1" opacity="0.9"/>
+  <polygon points="0,380 140,170 260,320 360,120 520,360 640,200 800,380" fill="#3d5a80"/>
+  <polygon points="360,120 320,190 350,175 372,205 400,170 430,200" fill="#ffffff"/>
+  <polygon points="140,170 110,225 140,210 165,235 180,205" fill="#ffffff"/>
+  <polygon points="640,200 610,255 640,240 665,262 690,232" fill="#ffffff"/>
+  <polygon points="-40,400 120,270 280,400 460,250 640,400 840,290 840,400" fill="#2f4858" opacity="0.9"/>
+  <rect y="380" width="800" height="220" fill="url(#lake)"/>
+  <polygon points="360,390 330,440 360,430 380,470 400,430 430,445" fill="#ffffff" opacity="0.25"/>
+  <ellipse cx="560" cy="430" rx="60" ry="8" fill="#fff3d1" opacity="0.5"/>
+  <ellipse cx="560" cy="460" rx="40" ry="6" fill="#fff3d1" opacity="0.35"/>
+  <path d="M0 520 Q100 490 200 520 T400 520 T600 520 T800 520 V600 H0Z" fill="#06303a" opacity="0.6"/>
+</svg>

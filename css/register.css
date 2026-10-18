@@ -1,0 +1,168 @@
+/* ===== register.css : Attribute selectors, combinators, pseudo-classes, pseudo-elements ===== */
+
+*, *::before, *::after { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  color: #263238;
+  line-height: 1.6;
+  background: linear-gradient(160deg, #0f4c5c 0%, #1b6b7d 45%, #e8a33d 140%) fixed;
+}
+
+/* ---- Pseudo-elements ---- */
+::selection { background-color: #e8a33d; color: #0f4c5c; }                    /* highlighted text */
+.intro p::first-letter { font-size: 2rem; font-weight: 600; color: #e8a33d; }   /* first letter */
+::placeholder { color: #9aa7ab; font-style: italic; }                          /* placeholder text */
+
+/* ---- Navigation: centred tabs with underline ---- */
+.reg-header {
+  text-align: center;
+  padding: 20px 6% 0;
+  background-color: rgba(0, 0, 0, 0.25);
+}
+.brand { display: block; font-family: 'Playfair Display', serif; font-size: 1.8rem; color: #ffffff; text-decoration: none; margin-bottom: 10px; }
+.brand span { color: #e8a33d; }
+.reg-header nav a {
+  display: inline-block;
+  padding: 10px 26px;
+  color: #cfe3e8;
+  text-decoration: none;
+  font-size: 0.9rem;
+  letter-spacing: 1px;
+  border-bottom: 4px solid transparent;
+}
+.reg-header nav a:hover { color: #ffffff; border-bottom-color: rgba(255, 255, 255, 0.6); }
+.reg-header nav a.here { color: #e8a33d; border-bottom-color: #e8a33d; }
+
+/* ---- Intro ---- */
+.intro { text-align: center; color: #ffffff; max-width: 650px; margin: 40px auto 20px; padding: 0 20px; }
+.intro h1 { font-family: 'Playfair Display', serif; font-size: 2.6rem; margin: 0 0 8px; }
+
+/* ---- Form card ---- */
+form {
+  max-width: 760px;
+  margin: 0 auto 50px;
+  padding: 30px;
+  background-color: rgba(255, 255, 255, 0.96);
+  border-radius: 20px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.35);
+}
+
+/* child combinator (>) : only legends that are direct children of fieldset */
+fieldset > legend {
+  padding: 4px 18px;
+  background-color: #0f4c5c;
+  color: #ffffff;
+  font-weight: 600;
+  border-radius: 50px;
+}
+fieldset { border: 2px solid #f0d9b0; border-radius: 14px; margin-bottom: 24px; padding: 14px 22px 8px; }
+
+/* descendant combinator (space) : every label inside .field */
+.field label, .label-text { display: block; font-weight: 600; font-size: 0.9rem; color: #0f4c5c; margin-bottom: 4px; }
+.field { margin-bottom: 16px; }
+
+/* ---- Attribute selectors ---- */
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="url"],
+input[type="date"],
+input[type="time"],
+input[type="number"],
+select,
+textarea {
+  width: 100%;
+  padding: 11px 14px;
+  font-family: inherit;
+  font-size: 1rem;
+  background-color: #fdf6e9;
+  border: 2px solid #e1d3b5;
+  border-radius: 10px;
+  outline: none;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+input[type="color"] { width: 70px; height: 40px; border: 2px solid #e1d3b5; border-radius: 8px; cursor: pointer; }
+input[type="range"] { width: 100%; accent-color: #c8553d; }
+input[type="file"] { font-family: inherit; }
+input[type="radio"], input[type="checkbox"] { accent-color: #c8553d; width: 17px; height: 17px; vertical-align: middle; margin-right: 6px; }
+
+input[readonly] { background-color: #e6ecee; color: #55666b; }    /* attribute presence */
+input[disabled] { background-color: #d8d8d8; cursor: not-allowed; }
+input[minlength] { border-left: 6px solid #e8a33d; }              /* inputs with a minlength rule */
+
+/* attribute selector + pseudo-element: red star after required labels' fields */
+.field:has(input[required]) > label::after,
+.field:has(select[required]) > label::after { content: " *"; color: #c8553d; }
+
+/* ---- Pseudo-classes ---- */
+input:hover, select:hover, textarea:hover { border-color: #0f4c5c; }
+
+input:focus, select:focus, textarea:focus {
+  border-color: #c8553d;
+  box-shadow: 0 0 0 4px rgba(200, 85, 61, 0.2);
+  background-color: #ffffff;
+}
+
+/* :valid and :invalid (only after the user has typed something) */
+input:valid:not(:placeholder-shown) { border-color: #2e9e5b; background-color: #eefaf2; }
+input:invalid:not(:placeholder-shown) { border-color: #d62839; background-color: #fdeced; }
+
+/* :checked pseudo-class */
+input[type="radio"]:checked + * { font-weight: 600; }
+.choices label:has(input:checked) { background-color: #0f4c5c; color: #ffffff; border-color: #0f4c5c; }
+
+/* ---- Sibling combinators ---- */
+/* adjacent sibling (+): the <small> hint right after a focused input */
+small { display: block; font-size: 0.75rem; color: #8a9499; margin-top: 3px; }
+input:focus + small, textarea:focus + small { color: #c8553d; font-weight: 600; }
+
+/* general sibling (~): any small after an invalid input turns red */
+input:not(:placeholder-shown):invalid ~ small { color: #d62839; }
+
+/* ---- Choices (radio / checkbox pills) ---- */
+.choices label {
+  display: inline-block;
+  margin: 0 8px 8px 0;
+  padding: 7px 16px;
+  font-weight: 400;
+  color: #263238;
+  border: 2px solid #e1d3b5;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.25s;
+}
+.choices label:hover { border-color: #0f4c5c; }
+
+output { color: #c8553d; font-weight: 600; }
+
+/* ---- Buttons ---- */
+.actions { text-align: center; }
+button {
+  padding: 13px 36px;
+  margin: 6px;
+  font-family: inherit;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #ffffff;
+  background-color: #c8553d;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  box-shadow: 0 6px 16px rgba(200, 85, 61, 0.4);
+  transition: transform 0.25s, background-color 0.25s;
+}
+button:hover { background-color: #a93f2a; transform: translateY(-3px); }
+button:active { transform: translateY(0); }
+button.reset { background-color: #55666b; box-shadow: none; }
+
+.terms label { font-weight: 400; }
+
+footer { text-align: center; color: #cfe3e8; padding: 22px; font-size: 0.9rem; background-color: rgba(0, 0, 0, 0.3); }
+footer a { color: #e8a33d; }
+
+@media (max-width: 600px) {
+  form { margin: 0 12px 40px; padding: 18px; }
+  .intro h1 { font-size: 2rem; }
+}

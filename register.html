@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explore Pakistan | Register</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/register.css">
+</head>
+<body>
+
+  <header class="reg-header">
+    <a class="brand" href="index.html">Explore<span>Pakistan</span></a>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="media.html">Media &amp; Info</a>
+      <a class="here" href="register.html">Register</a>
+    </nav>
+  </header>
+
+  <main>
+    <div class="intro">
+      <h1>Book Your Adventure</h1>
+      <p>Fill in the form below and our team will confirm your trip within 24 hours. Fields marked with a star are required.</p>
+    </div>
+
+    <form id="booking-form" action="#" method="post">
+
+      <!-- Personal details -->
+      <fieldset>
+        <legend>1. Personal Details</legend>
+
+        <div class="field">
+          <label for="fullname">Full Name</label>
+          <input type="text" id="fullname" name="fullname" placeholder="e.g. Ayesha Khan" required minlength="3" maxlength="40">
+          <small>3 to 40 characters.</small>
+        </div>
+
+        <div class="field">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" placeholder="name@example.com" required>
+          <small>We will send your booking here.</small>
+        </div>
+
+        <div class="field">
+          <label for="password">Password</label>
+          <input type="password" id="password" name="password" placeholder="At least 8 characters" required minlength="8" maxlength="20">
+          <small>8 to 20 characters.</small>
+        </div>
+
+        <div class="field">
+          <label for="profile">Social Profile</label>
+          <input type="url" id="profile" name="profile" placeholder="https://instagram.com/yourname">
+          <small>Optional.</small>
+        </div>
+
+        <div class="field">
+          <label for="country">Country</label>
+          <input type="text" id="country" name="country" value="Pakistan" readonly>
+        </div>
+
+        <div class="field">
+          <label for="bookingid">Booking ID</label>
+          <input type="text" id="bookingid" name="bookingid" value="Auto-generated" disabled>
+        </div>
+
+        <div class="field">
+          <label for="photo">Upload Photo</label>
+          <input type="file" id="photo" name="photo" accept="image/*">
+        </div>
+      </fieldset>
+
+      <!-- Trip details -->
+      <fieldset>
+        <legend>2. Trip Details</legend>
+
+        <div class="field">
+          <label for="destination">Destination</label>
+          <select id="destination" name="destination" required>
+            <option value="">-- Choose --</option>
+            <option value="hunza" selected>Hunza Valley</option>
+            <option value="skardu">Skardu &amp; Deosai</option>
+            <option value="lahore">Lahore Heritage</option>
+            <option value="swat">Swat &amp; Kalam</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label for="date">Travel Date</label>
+          <input type="date" id="date" name="date" min="2026-11-01" max="2027-12-31" required>
+        </div>
+
+        <div class="field">
+          <label for="time">Pickup Time</label>
+          <input type="time" id="time" name="time" value="07:00">
+        </div>
+
+        <div class="field">
+          <label for="people">Travellers</label>
+          <input type="number" id="people" name="people" min="1" max="20" value="2" required>
+        </div>
+
+        <div class="field">
+          <label for="budget">Budget: PKR <output id="budget-out">100000</output></label>
+          <input type="range" id="budget" name="budget" min="20000" max="500000" step="10000" value="100000">
+        </div>
+
+        <div class="field">
+          <label for="color">Favourite Colour</label>
+          <input type="color" id="color" name="color" value="#0f4c5c">
+        </div>
+
+        <div class="field">
+          <span class="label-text">Trip Type</span>
+          <div class="choices">
+            <label><input type="radio" name="triptype" value="family" checked> Family</label>
+            <label><input type="radio" name="triptype" value="friends"> Friends</label>
+            <label><input type="radio" name="triptype" value="solo"> Solo</label>
+          </div>
+        </div>
+
+        <div class="field">
+          <span class="label-text">Interests</span>
+          <div class="choices">
+            <label><input type="checkbox" name="interest" value="trekking" checked> Trekking</label>
+            <label><input type="checkbox" name="interest" value="photography"> Photography</label>
+            <label><input type="checkbox" name="interest" value="food"> Food</label>
+            <label><input type="checkbox" name="interest" value="history"> History</label>
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="message">Special Requests</label>
+          <textarea id="message" name="message" rows="4" maxlength="300" placeholder="Any dietary needs or special requests?"></textarea>
+          <small>Maximum 300 characters.</small>
+        </div>
+      </fieldset>
+
+      <div class="field terms">
+        <label><input type="checkbox" name="terms" required> I agree to the booking terms</label>
+      </div>
+
+      <div class="actions">
+        <button type="submit">Confirm Booking</button>
+        <button type="reset" class="reset">Clear Form</button>
+      </div>
+    </form>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 Explore Pakistan</p>
+    <p><a href="index.html">Home</a> | <a href="media.html">Media &amp; Info</a> | <a href="register.html">Register</a></p>
+  </footer>
+
+  <script src="js/register.js"></script>
+</body>
+</html>
